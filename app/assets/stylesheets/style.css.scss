@@ -3,6 +3,12 @@
 @import "shared/fonts";
 @import "shared/mixins/responsive";
 
+/* color classes */
+
+.white{
+  color: #FFFFFF;
+}
+
 #main-navigation{
   position: fixed;
   width: 100%;
@@ -35,16 +41,38 @@
         }
       }
     }
+  }
 
+  #navigation-icon{
+    display: none;
   }
   @include breakpoint(md){
+    #navigation-icon{
+      display: block;
+      text-align: center;
+      font-size: 28px;
+      padding:10px;
 
+      &:hover{
+        color: #B0D5FF;
+      }
+    }
+    ul{
+      display: none;
+      background-color: rgba(0,0,0,.5);
+      padding: 0;
+      li{
+        display: block;
+        a{
+          color: white;
+        }
+      }
+    }
   }
-  @include breakpoint(sm){
-
-  }
-  @include breakpoint(xs){
-
+  @include breakpoint(lg){
+    ul{
+      display: block;
+    }
   }
 }
 
