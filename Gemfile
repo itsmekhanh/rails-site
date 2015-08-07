@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #Twitter Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
 
-# Tumblr api
+# TumblrManager api
 gem 'tumblr_client'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
