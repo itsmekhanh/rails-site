@@ -1,2 +1,2 @@
 <% provide(:title, "Blog") %>
-<%= render 'blog/post' %>
+<%= react_component("Blog", {blog: @blog}, {prerender: false}) %>
