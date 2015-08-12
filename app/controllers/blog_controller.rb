@@ -1,8 +1,8 @@
 class BlogController < ApplicationController
-
+  include BlogHelper
 
   def index
     manager = TumblrManager.new
-    @blog = manager.getPosts
+    @posts = manager.getPosts
   end
 end

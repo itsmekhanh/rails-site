@@ -1,2 +1,4 @@
 <% provide(:title, "Blog") %>
-<%= react_component("Blog", {blog: @blog}, {prerender: false}) %>
+<div id="blog">
+  <%= react_component("Blog", {posts: @posts}) %>
+</div>

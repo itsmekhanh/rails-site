@@ -6,11 +6,10 @@ var Blog = React.createClass({
         }
     },
     render: function(){
-        blog = this.props.blog;
+        posts = this.props.posts;
         return (
             <div>
-                <MainPost post={this.state.currentPost}/>
-                <Posts posts={blog.posts} />
+                <MainPost post={this.props.posts[0]} />
             </div>
         );
     }

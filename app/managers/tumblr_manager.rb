@@ -1,5 +1,5 @@
 class TumblrManager
-  BLOG="khanhluc.tumblr.com"
+  BLOG="khanhtesting.tumblr.com"
 
   def initialize()
     Tumblr.configure do |config|
@@ -15,6 +15,39 @@ class TumblrManager
   end
 
   def getPosts()
-    @client.posts(BLOG)
+    blog = @client.posts(BLOG)
+    return self.filterPosts(blog['posts'])
+  end
+
+  def filterPost(post)
+    require 'htmlentities'
+    data = {
+        :id => post['id'],
+        :type => post['type'],
+        :format => post['format'],
+        :timestamp => post['timestamp'],
+        :tags => post['tags']
+    }
+
+    case post['type']
+      when "text"
+        data[:body] = post['body']
+      when "video"
+        data[:body] = post['player'][2]['embed_code']
+        data[:caption] = post['caption']
+      when "photo"
+        data[:body] = post['photos']['alt_sizes'][0]['url']
+        data[:caption] = post['caption']
+    end
+
+    return data
+  end
+
+  def filterPosts(posts)
+    data = []
+    posts.each do |post|
+      data << self.filterPost(post)
+    end
+    return data
   end
 end
