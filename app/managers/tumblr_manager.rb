@@ -35,6 +35,7 @@ class TumblrManager
       when "video"
         data[:body] = post['player'][2]['embed_code']
         data[:caption] = post['caption']
+        data[:thumbnail_url] = post['thumbnail_url']
       when "photo"
         data[:body] = post['photos']['alt_sizes'][0]['url']
         data[:caption] = post['caption']

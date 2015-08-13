@@ -1,15 +1,17 @@
 var Post = React.createClass({
    render: function(){
        var post = this.props.post;
-       var body;
-       var caption;
+       var imgTag = null;
+       var img = "";
+       var className = "post "+this.props.class;
 
        switch(post.type){
            case "text":
-               body = post.body;
+               imgTag = $(post.body).filter('img').first();
+               img = imgTag[0].src;
                break;
            case "video":
-               body = post.player[2];
+               img = post.thumbnail_url;
                break;
            case "photo":
                break;
@@ -19,11 +21,10 @@ var Post = React.createClass({
                break;
        }
 
-       var html = $(body);
-       var img = html.filter('img');
-
        return (
-           <div className="post" dangerouslySetInnerHTML={{__html: body}} />
+           <div className={className}>
+               <img className="post-image" src={img}/>
+           </div>
        );
    }
 

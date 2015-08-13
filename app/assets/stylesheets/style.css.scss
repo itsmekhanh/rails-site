@@ -156,13 +156,20 @@
 }
 
 #blog{
-  width: 100%;
   .post{
     height: 500px;
     overflow-y: hidden;
     img.post-image {
       width: 100%;
     }
+  }
+
+  .full{
+    width: 100%;
+  }
+
+  .half{
+    width: 50%;
   }
 }
 
