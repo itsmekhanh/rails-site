@@ -19,8 +19,11 @@ var Post = React.createClass({
                break;
        }
 
+       var html = $(body);
+       var img = html.filter('img');
+
        return (
-           <div dangerouslySetInnerHTML={{__html: body}} />
+           <div className="post" dangerouslySetInnerHTML={{__html: body}} />
        );
    }
 

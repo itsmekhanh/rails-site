@@ -9,7 +9,7 @@ var Blog = React.createClass({
         posts = this.props.posts;
         return (
             <div>
-                <MainPost post={this.props.posts[0]} />
+                <Posts posts={this.props.posts} />
             </div>
         );
     }
