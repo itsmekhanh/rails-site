@@ -4,6 +4,7 @@ var Post = React.createClass({
        var imgTag = null;
        var img = "";
        var className = "post "+this.props.class;
+       var divStyle = {};
 
        switch(post.type){
            case "text":
@@ -21,9 +22,13 @@ var Post = React.createClass({
                break;
        }
 
+       divStyle["backgroundImage"] = 'url('+img+')';
+
        return (
-           <div className={className}>
-               <img className="post-image" src={img}/>
+           <div className={className} style={divStyle}>
+               <div className="overlay">
+                   <h2 className="text-center vcenter">{post.title}</h2>
+               </div>
            </div>
        );
    }

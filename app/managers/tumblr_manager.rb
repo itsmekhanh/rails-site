@@ -20,7 +20,10 @@ class TumblrManager
   end
 
   def filterPost(post)
-    require 'htmlentities'
+    require 'rails/html/sanitizer'
+
+    sanitizer = Rails::Html::FullSanitizer.new
+
     data = {
         :id => post['id'],
         :type => post['type'],
@@ -32,13 +35,11 @@ class TumblrManager
     case post['type']
       when "text"
         data[:body] = post['body']
+        data[:title] = sanitizer.sanitize(post['title'])
       when "video"
         data[:body] = post['player'][2]['embed_code']
-        data[:caption] = post['caption']
+        data[:title] = sanitizer.sanitize(post['caption'])
         data[:thumbnail_url] = post['thumbnail_url']
-      when "photo"
-        data[:body] = post['photos']['alt_sizes'][0]['url']
-        data[:caption] = post['caption']
     end
 
     return data
