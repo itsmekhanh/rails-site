@@ -11,7 +11,13 @@ class TumblrManager
   end
 
   def getPost(id)
+    post = @client.posts(BLOG, :id=>id);
 
+    if post['blog']
+      return self.filterPost(post['posts'][0])
+    else
+      return nil
+    end
   end
 
   def getPosts()
@@ -29,7 +35,8 @@ class TumblrManager
         :type => post['type'],
         :format => post['format'],
         :timestamp => post['timestamp'],
-        :tags => post['tags']
+        :tags => post['tags'],
+        :slug => post['slug']
     }
 
     case post['type']

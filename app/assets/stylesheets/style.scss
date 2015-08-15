@@ -9,6 +9,7 @@
   color: #FFFFFF;
 }
 
+/*------------------------ Navigation Menu -----------------------------------*/
 #main-navigation{
   position: fixed;
   width: 100%;
@@ -78,6 +79,9 @@
       text-align: center;
       font-size: 28px;
       padding:10px;
+      background-color: rgba(0,0,0,.75);
+      border-bottom-style: none;
+      top: 0px;
 
       &:hover{
         color: #B0D5FF;
@@ -111,6 +115,8 @@
   }
 }
 
+
+/*--------------------------- Landing Page Banner --------------------------------*/
 #main-banner{
   height: 100vh;
   width: 100%;
@@ -136,6 +142,7 @@
   }
 }
 
+/*------------------------------- Profile ----------------------------------*/
 #profile{
   /* parallax background */
   background-attachment: fixed;
@@ -174,6 +181,7 @@
   }
 }
 
+/* ----------------------------------- Blog -------------------------------*/
 #blog{
   .post{
     display: block;
@@ -193,23 +201,24 @@
 
     .overlay{
       position: absolute;
-      background-color: rgba(0,0,0,.35);
+      background-color: rgba(0,0,0,.2);
       height: 100%;
       width: 100%;
 
-      &:hover{
-        -webkit-transition: all .2s ease-in-out;
-        -moz-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        -ms-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        opacity: 0;
-      }
+      //&:hover{
+      //  -webkit-transition: all .2s ease-in-out;
+      //  -moz-transition: all .2s ease-in-out;
+      //  -o-transition: all .2s ease-in-out;
+      //  -ms-transition: all .2s ease-in-out;
+      //  transition: all .2s ease-in-out;
+      //  opacity: 0;
+      //}
 
       h2{
         color: white;
         padding: 0px 10px 0px 10px;
         text-shadow: 0px 0px 10px rgba(0,0,0,1);
+        text-transform: uppercase;
       }
 
       @include breakpoint(xs){
@@ -237,7 +246,16 @@
   }
 }
 
-/* customizing classes */
+/* --------------- Main Post -------------------------------*/
+#main-post{
+  img.full{
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+
+/* ------------- customizing classes -----------------*/
 .no-gutters{
   margin-right: 0;
 }

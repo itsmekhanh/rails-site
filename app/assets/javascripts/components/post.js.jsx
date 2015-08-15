@@ -2,9 +2,10 @@ var Post = React.createClass({
    render: function(){
        var post = this.props.post;
        var imgTag = null;
-       var img = "";
        var className = "post "+this.props.class;
        var divStyle = {};
+       var url = "/blog/post/"+post.id+"/"+post.slug;
+       var img = "";
 
        switch(post.type){
            case "text":
@@ -16,16 +17,12 @@ var Post = React.createClass({
                break;
            case "photo":
                break;
-           case "audio":
-               break;
-           case "quote":
-               break;
        }
 
        divStyle["backgroundImage"] = 'url('+img+')';
 
        return (
-           <a href="#" className={className} style={divStyle}>
+           <a href={url} className={className} style={divStyle}>
                <div className="overlay">
                    <h2 className="text-center vcenter">{post.title}</h2>
                </div>
