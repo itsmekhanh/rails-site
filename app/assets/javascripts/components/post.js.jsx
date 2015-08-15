@@ -25,11 +25,11 @@ var Post = React.createClass({
        divStyle["backgroundImage"] = 'url('+img+')';
 
        return (
-           <div className={className} style={divStyle}>
+           <a href="#" className={className} style={divStyle}>
                <div className="overlay">
                    <h2 className="text-center vcenter">{post.title}</h2>
                </div>
-           </div>
+           </a>
        );
    }
 

@@ -17,6 +17,31 @@
     list-style-type: none;
     text-align: center;
     margin-bottom: 0;
+    background-color: rgba(0,0,0,0);
+
+    &.show-bg{
+      -webkit-transition: all .75s ease;
+      -moz-transition: all .75s ease;
+      -ms-transition: all .75s ease;
+      -o-transition: all .75s ease;
+      transition: all .75s ease;
+      background-color: rgba(0,0,0,.75);
+      li{
+        a:hover{
+          border-style: none;
+        }
+      }
+    }
+
+    &.hide-bg{
+      -webkit-transition: all .75s ease;
+      -moz-transition: all .75s ease;
+      -ms-transition: all .75s ease;
+      -o-transition: all .75s ease;
+      transition: all .75s ease;
+      background0color: rgba(0,0,0,.75);
+    }
+
     li{
       display: inline-block;
       a{
@@ -46,7 +71,8 @@
   #navigation-icon{
     display: none;
   }
-  @include breakpoint(md){
+
+  @include breakpoint(sm){
     #navigation-icon{
       display: block;
       text-align: center;
@@ -58,14 +84,23 @@
       }
     }
     ul{
-      display: none;
-      background-color: rgba(0,0,0,.75);
+      display:none;
+      height: 0px;
       padding: 0;
       li{
         display: block;
+        background-color: rgba(0,0,0,.75);
         a{
           color: white;
+          &:hover{
+            border-style: none;
+          }
         }
+
+      }
+
+      &.show-small-bg{
+        display: block;
       }
     }
   }
@@ -141,6 +176,7 @@
 
 #blog{
   .post{
+    display: block;
     min-height: 400px;
     height: 100%;
     -webkit-background-size: cover;
@@ -157,13 +193,23 @@
 
     .overlay{
       position: absolute;
-      background-color: rgba(0,0,0,.25);
+      background-color: rgba(0,0,0,.35);
       height: 100%;
       width: 100%;
+
+      &:hover{
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        opacity: 0;
+      }
 
       h2{
         color: white;
         padding: 0px 10px 0px 10px;
+        text-shadow: 0px 0px 10px rgba(0,0,0,1);
       }
 
       @include breakpoint(xs){
