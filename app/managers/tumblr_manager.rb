@@ -29,12 +29,14 @@ class TumblrManager
     require 'rails/html/sanitizer'
 
     sanitizer = Rails::Html::FullSanitizer.new
+    time = Time.at(post['timestamp'])
 
     data = {
         :id => post['id'],
         :type => post['type'],
         :format => post['format'],
         :timestamp => post['timestamp'],
+        :date => time.strftime("%B %e, %Y"),
         :tags => post['tags'],
         :slug => post['slug']
     }
