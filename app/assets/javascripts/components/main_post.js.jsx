@@ -3,7 +3,7 @@ var MainPost = React.createClass({
         var img = "";
         var divStyle = {};
         var body = "";
-        var textPost = null;
+        var mainPost = null;
 
         post = this.props.post;
 
@@ -16,20 +16,33 @@ var MainPost = React.createClass({
                 img = imgTag[0].src;
                 body = $body.html();
                 divStyle['backgroundImage'] = 'url('+img+')';
-                textPost = (
-                    <div id="main-image" style={divStyle}>
-                        <div className="overlay">
-                            <div className="text-center vcenter">
-                                <h2>{post.title}</h2>
-                                <h3>{post.date}</h3>
+                mainPost = (
+                    <div id="main-post">
+                        <div id="main-image" style={divStyle}>
+                            <div className="overlay">
+                                <div className="text-center vcenter">
+                                    <h2>{post.title}</h2>
+                                    <h3>{post.date}</h3>
+                                </div>
                             </div>
                         </div>
+                        <div id="post" dangerouslySetInnerHTML={{__html: body}} />
                     </div>
                 );
                 break;
             case "video":
                 body = post.body;
                 img = post.thumbnail_url;
+                mainPost = (
+                  <div id="main-post">
+                      <div id="video-wrapper">
+                          <div id="post" dangerouslySetInnerHTML={{__html: body}} />
+                      </div>
+                      <div className="container">
+                          <p>{post.title}</p>
+                      </div>
+                  </div>
+                );
                 break;
             case "photo":
                 break;
@@ -39,11 +52,6 @@ var MainPost = React.createClass({
                 break;
         }
 
-        return (
-            <div id="main-post">
-                { textPost }
-                <div id="post" dangerouslySetInnerHTML={{__html: body}} />
-            </div>
-        );
+        return mainPost;
     }
 });
