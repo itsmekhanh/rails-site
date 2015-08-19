@@ -377,7 +377,7 @@
       }
 
       &:after{
-        right: -24px;
+        right: -22px;
       }
     }
 
@@ -403,9 +403,19 @@
 
   #jobs{
     position: relative;
+    overflow: hidden;
+
+    #timeline{
+      position: absolute;
+      height: 100%;
+      width: 4px;
+      background-color: black;
+      left: 50%;
+    }
+
     .job{
       width: 50%;
-      height: 200px;
+      height: 250px;
       padding: 20px;
 
       &:nth-child(odd){
