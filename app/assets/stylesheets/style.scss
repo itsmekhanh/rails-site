@@ -365,9 +365,25 @@
     }
   }
 
-  .job{
+  #jobs{
+    .job{
+      width: 50%;
+      height: 200px;
+      background-color: greenyellow;
+
+    }
+
+    .job-left{
+      float: left;
+    }
+
+    .job-right{
+      float: right;
+    }
+
 
   }
+
 
 }
 
