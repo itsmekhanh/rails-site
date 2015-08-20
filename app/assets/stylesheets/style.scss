@@ -166,18 +166,36 @@
     color: white;
     height: 400px;
     font-size: 18px;
+    p{
+      margin-bottom: 0px;
+    }
+
+    @include breakpoint(xs){
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: auto;
+    }
   }
 
   #photo{
     background-color: rgba(0,0,0,.5);
     padding: 30px;
-    img{
-      top: 50%;
-      height: 80%;
-      width: auto;
-    }
     color: white;
     height: 400px;
+
+    img{
+      height: 80%;
+      width: auto;
+      @include breakpoint(xs) {
+        width: 70%;
+        height: auto;
+      }
+    }
+
+    @include breakpoint(xs){
+      height: auto;
+    }
   }
 }
 
@@ -331,7 +349,6 @@
     display: block;
     height: 100vh;
     width: 100%;
-
   }
 }
 
@@ -411,6 +428,7 @@
       width: 4px;
       background-color: black;
       left: 50%;
+      transform: translateX(-50%);
     }
 
     .job{
@@ -463,4 +481,9 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+
+  @include breakpoint(xs){
+    top: 0px;
+    transform: translateY(0);
+  }
 }
