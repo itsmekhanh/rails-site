@@ -394,7 +394,7 @@
       }
 
       &:after{
-        right: -22px;
+        right: -24px;
       }
     }
 
@@ -419,7 +419,6 @@
   }
 
   #jobs{
-    position: relative;
     overflow: hidden;
 
     #timeline{
@@ -435,15 +434,44 @@
       width: 50%;
       height: 250px;
       padding: 20px;
+      position: relative;
 
       &:nth-child(odd){
         float: left;
         margin-top: 20px;
+
+        .job-content{
+          &:after{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 15px 8px 15px;
+            border-color: transparent transparent transparent #007bff;
+            position: absolute;
+            content: "";
+            right: -8px;
+            top: 50px;
+          }
+        }
       }
 
       &:nth-child(even){
         float: right;
         margin-top: 40px;
+
+        .job-content{
+          &:after{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 18px 8px 0;
+            border-color: transparent #007bff transparent transparent;
+            position: absolute;
+            content: "";
+            left: 3px;
+            top: 80px;
+          }
+        }
       }
 
       .job-content{
@@ -461,6 +489,8 @@
           font-weight: lighter;
           font-size: 14px;
         }
+
+
       }
     }
 
