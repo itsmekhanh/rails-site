@@ -355,6 +355,7 @@
 /* --------------------- Resume -------------------------*/
 #resume{
   $resume-color: #2c3d4f;
+  background-color: #EFEFEF;
   color : $resume-color;
   font-family: 'Open Sans Condensed', sans-serif;
 
@@ -400,18 +401,20 @@
 
     #experience{
       margin-top: 60px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      width: 250px;
-      background-color: #bbdbf6;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      width: 160px;
+      background-color: #FFFFFF;
 
       border-radius: 8px 8px 8px 8px;
       -moz-border-radius: 8px 8px 8px 8px;
       -webkit-border-radius: 8px 8px 8px 8px;
+      border-style: solid;
+      border-color: #BBBBBB;
 
       h3{
         text-transform: uppercase;
-        font-size: 30px;
+        font-size: 20px;
         margin-top: 0px;
         margin-bottom: 0px;
       }
@@ -420,19 +423,19 @@
 
   #jobs{
     overflow: hidden;
+    position: relative;
 
     #timeline{
       position: absolute;
       height: 100%;
       width: 4px;
-      background-color: black;
+      background-color: #BBBBBB;
       left: 50%;
       transform: translateX(-50%);
     }
 
     .job{
       width: 50%;
-      height: 250px;
       padding: 20px;
       position: relative;
 
@@ -446,7 +449,7 @@
             height: 0;
             border-style: solid;
             border-width: 8px 15px 8px 15px;
-            border-color: transparent transparent transparent #007bff;
+            // border-color: transparent transparent transparent #007bff;
             position: absolute;
             content: "";
             right: -8px;
@@ -465,7 +468,7 @@
             height: 0;
             border-style: solid;
             border-width: 8px 18px 8px 0;
-            border-color: transparent #007bff transparent transparent;
+            //border-color: transparent #007bff transparent transparent;
             position: absolute;
             content: "";
             left: 3px;
@@ -475,21 +478,25 @@
       }
 
       .job-content{
-        background-color: greenyellow;
         padding: 20px;
         border-radius: 20px 20px 20px 20px;
         -moz-border-radius: 20px 20px 20px 20px;
         -webkit-border-radius: 20px 20px 20px 20px;
+
         .job-title{
           font-size: 20px;
           font-weight: bold;
+          margin-bottom: 6px;
         }
-
         .job-position{
           font-weight: lighter;
-          font-size: 14px;
+          font-size: 18px;
+          margin-bottom: 6px;
         }
-
+        .job-description{
+          font-size: 14px;
+          font-family: "Open Sans";
+        }
 
       }
     }
