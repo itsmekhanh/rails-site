@@ -355,7 +355,7 @@
 /* --------------------- Resume -------------------------*/
 #resume{
   $resume-color: #2c3d4f;
-  background-color: #EFEFEF;
+  background-color: #E3E3E3;
   color : $resume-color;
   font-family: 'Open Sans Condensed', sans-serif;
 
@@ -464,15 +464,10 @@
             -o-transition: all .75s ease;
             transition: all .75s ease;
           }
+
         }
         @include breakpoint(sm){
-          width: 100%;
-          float: none;
           margin-top: 20px;
-
-          &:hover{
-            transition: none;
-          }
         }
       }
 
@@ -503,8 +498,6 @@
         }
 
         @include breakpoint(sm){
-          width: 100%;
-          float: none;
           margin-top: 20px;
         }
       }
@@ -537,8 +530,24 @@
         .job-description{
           font-size: 14px;
           font-family: "Open Sans";
+          .job-date{
+            font-size: 14px;
+            font-family: "Open Sans Condensed"
+          }
         }
 
+      }
+
+      @include breakpoint(sm){
+        width: 95%;
+        float: none;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+        &:hover{
+          transition: none;
+        }
       }
     }
   }
