@@ -358,12 +358,12 @@
   background-color: #E3E3E3;
   color : $resume-color;
   font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 60px;
 
-  #resume-header{
+  .resume-header{
     h2{
       display: inline-block;
-      margin-top: 60px;
-      padding: 20px;
+      padding: 40px;
       font-size: 48px;
       font-weight: 700;
       text-transform: uppercase;
@@ -400,7 +400,6 @@
     }
 
     .header-border{
-      margin-top: 60px;
       padding-top: 12px;
       padding-bottom: 12px;
       width: 160px;
@@ -421,23 +420,25 @@
     }
   }
 
-  #jobs{
-    overflow: hidden;
+  .jobs{
     position: relative;
+    padding-bottom: 40px;
 
-    #timeline{
+    .timeline{
       position: absolute;
       height: 100%;
       width: 4px;
       background-color: #BBBBBB;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 100;
     }
 
     .job{
       width: 50%;
       padding: 20px;
       position: relative;
+      z-index:101;
 
       &:nth-child(odd){
         float: left;
