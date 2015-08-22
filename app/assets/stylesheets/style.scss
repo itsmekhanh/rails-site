@@ -166,15 +166,24 @@
     color: #FFFFFF;
     height: 400px;
     font-size: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
     p{
       margin-bottom: 0px;
+
+      &.vcenter{
+        @include breakpoint(xs){
+          transform: none;
+        }
+      }
     }
 
     @include breakpoint(xs){
       font-size: 14px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 40px;
+      padding-bottom: 40px;
       height: auto;
+      top: 0;
     }
   }
 
@@ -574,7 +583,18 @@
 
 /*-------------- Featured Projects ------------------*/
 #featured-projects{
+  background: url(image-path("featured_works.jpg")) no-repeat center center fixed;
+  height: 400px;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
 
+  #overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.50);
+  }
 }
 
 /* ------------- customizing classes -----------------*/
