@@ -1,9 +1,9 @@
 <% provide(:title, "Khanh Luc") %>
 <div id="main-banner">
   <div id="overlay"></div>
-  <div id="image"></div>
+  <div id="image" class="cover-background"></div>
 </div>
-<div id="profile">
+<div id="profile" class="cover-background">
   <div class="row">
     <div id="photo" class="col-md-6">
       <%= image_tag "profile_pic.jpg", class: "img-circle center-block" %>
@@ -19,6 +19,7 @@
   </div>
 </div>
 <div id="resume">
+  <div class="container">
   <div class="text-center resume-header">
     <h2>My <span class="emphasize">Resume</span></h2>
     <div class="center-block header-border">
@@ -59,8 +60,8 @@
     <div class="row">
       <div class="job">
         <div class="job-content">
-          <div class="job-title">Student Researcher</div>
-          <div class="job-position">Immersive Visualization Laboratory at Calit2</div>
+          <div class="job-title">Immersive Visualization Laboratory at Calit2</div>
+          <div class="job-position">Research Programmer</div>
           <div class="job-description">
             <p>
               During my last year at UCSD, I developed a graphical user interface application, MatEdit,
@@ -120,4 +121,8 @@
   <div id="end-logo" class="center-block text-center img-circle">
     <span class="glyphicon glyphicon-education"></span>
   </div>
+  </div>
+</div>
+<div id="featured-projects">
+
 </div>

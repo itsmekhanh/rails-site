@@ -18,7 +18,7 @@ var MainPost = React.createClass({
                 divStyle['backgroundImage'] = 'url('+img+')';
                 mainPost = (
                     <div id="main-post">
-                        <div id="main-image" style={divStyle}>
+                        <div id="main-image" className="cover-background" style={divStyle}>
                             <div className="overlay">
                                 <div className="text-center vcenter">
                                     <h2>{post.title}</h2>

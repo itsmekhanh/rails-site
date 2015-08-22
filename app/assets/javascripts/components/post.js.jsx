@@ -2,7 +2,7 @@ var Post = React.createClass({
    render: function(){
        var post = this.props.post;
        var imgTag = null;
-       var className = "post "+this.props.class;
+       var className = "post cover-background "+this.props.class;
        var divStyle = {};
        var url = "/blog/post/"+post.id+"/"+post.slug;
        var img = "";
