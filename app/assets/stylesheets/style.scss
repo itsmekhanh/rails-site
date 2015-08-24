@@ -172,13 +172,13 @@
       margin-bottom: 0px;
 
       &.vcenter{
-        @include breakpoint(xs){
+        @include breakpoint(sm){
           transform: none;
         }
       }
     }
 
-    @include breakpoint(xs){
+    @include breakpoint(sm){
       font-size: 14px;
       padding-top: 40px;
       padding-bottom: 40px;
@@ -196,13 +196,13 @@
     img{
       height: 80%;
       width: auto;
-      @include breakpoint(xs) {
+      @include breakpoint(sm) {
         width: 70%;
         height: auto;
       }
     }
 
-    @include breakpoint(xs){
+    @include breakpoint(sm){
       height: auto;
     }
   }
@@ -236,7 +236,7 @@
         margin-top: 0px;
       }
 
-      @include breakpoint(xs){
+      @include breakpoint(sm){
         h2{
           font-size: 24px;
         }
@@ -254,7 +254,7 @@
     float: left;
     width: 50%;
 
-    @include breakpoint(xs){
+    @include breakpoint(sm){
       float: none;
       width: 100%;
     }
@@ -361,66 +361,6 @@
   font-family: 'Open Sans Condensed', sans-serif;
   padding-top: 60px;
   padding-bottom: 60px;
-
-  .resume-header{
-    h2{
-      display: inline-block;
-      padding: 40px;
-      font-size: 48px;
-      font-weight: 700;
-      text-transform: uppercase;
-      position: relative;
-
-      .emphasize{
-        display: inline-block;
-        color: #FFFFFF;
-        background-color: $resume-color;
-        padding: 10px;
-
-        border-radius: 8px 8px 8px 8px;
-        -moz-border-radius: 8px 8px 8px 8px;
-        -webkit-border-radius: 8px 8px 8px 8px;
-      }
-
-      &:before, &:after{
-        position: absolute;
-        content: "";
-        display: inline-block;
-        width: 30px;
-        height: 2px;
-        background-color: $resume-color;
-        top: 50%;
-      }
-
-      &:before{
-        left: -20px;
-      }
-
-      &:after{
-        right: -24px;
-      }
-    }
-
-    .header-border{
-      padding-top: 12px;
-      padding-bottom: 12px;
-      width: 160px;
-      background-color: #FFFFFF;
-
-      border-radius: 8px 8px 8px 8px;
-      -moz-border-radius: 8px 8px 8px 8px;
-      -webkit-border-radius: 8px 8px 8px 8px;
-      border-style: solid;
-      border-color: #BBBBBB;
-
-      h3{
-        text-transform: uppercase;
-        font-size: 20px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-      }
-    }
-  }
 
   .jobs{
     position: relative;
@@ -581,19 +521,54 @@
   }
 }
 
-/*-------------- Featured Projects ------------------*/
-#featured-projects{
-  background: url(image-path("featured_works.jpg")) no-repeat center center fixed;
-  height: 400px;
+/*-------------- Featured Works ------------------*/
+#featured-works{
+  background-image: url(image-path("featured_works.jpg"));
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 600px;
+  height: auto;
   width: 100%;
   -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
   box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.75);
+  position: relative;
 
   #overlay{
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.50);
+
+    .main-header{
+      h2{
+        color: #FFFFFF;
+        &:before, &:after{
+          background-color: #FFFFFF;
+        }
+      }
+    }
+
+    .featured{
+      min-height: 300px;
+      padding:10px;
+      overflow: hidden;
+      img{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        border-style: solid;
+        border-color: #FFFFFF;
+
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+      }
+
+      @include breakpoint(sm){
+        max-height: 150px;
+        overflow: hidden;
+      }
+    }
   }
 }
 
@@ -613,4 +588,78 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+/*---------------- labels ------------------------*/
+.main-header{
+  $resume-color: #2c3d4f;
+  h2{
+    display: inline-block;
+    padding: 40px;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+
+    .emphasize{
+      display: inline-block;
+      color: #FFFFFF;
+      background-color: $resume-color;
+      padding: 10px;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
+    }
+
+    &:before, &:after{
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background-color: $resume-color;
+      top: 50%;
+    }
+
+    &:before{
+      left: -20px;
+      @include breakpoint(sm){
+        display: none;
+      }
+    }
+
+    &:after{
+      right: -24px;
+
+      @include breakpoint(sm){
+        display: none;
+      }
+    }
+
+    @include breakpoint(sm){
+      padding: 20px;
+      font-size: 24px;
+    }
+  }
+
+  .header-border{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 160px;
+    background-color: #FFFFFF;
+
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border-style: solid;
+    border-color: #BBBBBB;
+
+    h3{
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
 }
