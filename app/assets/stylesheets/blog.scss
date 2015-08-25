@@ -1,3 +1,153 @@
 // Place all the styles related to the Blog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "shared/fonts";
+@import "shared/mixins/responsive";
+
+/* ----------------------------------- Blog -------------------------------*/
+#blog{
+  .post{
+    display: block;
+    min-height: 400px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    -webkit-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+    box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+
+    .overlay{
+      position: absolute;
+      background-color: rgba(0,0,0,.2);
+      height: 100%;
+      width: 100%;
+
+      h2{
+        color: #FFFFFF;
+        padding: 0px 10px 0px 10px;
+        text-shadow: 0px 0px 10px rgba(0,0,0,1);
+        text-transform: uppercase;
+        margin-top: 0px;
+      }
+
+      @include breakpoint(sm){
+        h2{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+
+  .full{
+    width: 100%;
+    clear: both;
+  }
+
+  .half{
+    float: left;
+    width: 50%;
+
+    @include breakpoint(sm){
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+/* --------------- Main Post -------------------------------*/
+#main-post{
+  #main-image{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    -webkit-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+    box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+
+    .overlay{
+      position: absolute;
+      background-color: rgba(0,0,0,.25);
+      height: 100%;
+      width: 100%;
+
+      text-shadow: 0px 0px 10px rgba(0,0,0,1);
+
+      h2{
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 0px;
+
+        @include breakpoint(sm){
+          font-size: 28px;
+        }
+      }
+      h3{
+        color: #FFFFFF;
+        margin-top: 0px;
+        @include breakpoint(sm){
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  #video-wrapper{
+    width: 100%;
+    height: 50vw;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    background-color: black;
+    iframe{
+      width: 100%;
+      height: 100%;
+      border: 0px inset;
+    }
+    #post{
+      height: 100%;
+    }
+  }
+
+  p{
+
+    &:first-child{
+      margin-top: 80px;
+      @include breakpoint(sm){
+        margin-top: 40px;
+      }
+    }
+
+    &:last-child{
+      margin-bottom: 80px;
+      @include breakpoint(sm){
+        margin-bottom: 40px;
+      }
+    }
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Noto Serif', serif;
+    color: black;
+    font-size: 24px;
+
+    @include breakpoint(sm){
+      font-size: 16px;
+    }
+  }
+
+  img.full{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}

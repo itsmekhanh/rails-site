@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'photography'=>'photography#index'
+  get 'photography/gallery/:id/*name' => 'photography#view'
+
   get 'blog' => 'blog#index'
   get 'blog/post/:id/*name' => 'blog#post'
 

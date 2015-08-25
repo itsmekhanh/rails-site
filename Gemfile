@@ -6,6 +6,9 @@ gem 'bootstrap-sass', '~> 3.3.5'
 # TumblrManager api
 gem 'tumblr_client'
 
+#flickr api
+gem 'flickraw'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use postgresql as the database for Active Record
