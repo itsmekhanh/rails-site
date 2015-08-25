@@ -1,2 +1,4 @@
-<h1>Photography#index</h1>
-<p>Find me in app/views/photography/index.html.erb</p>
+<% provide(:title, "Photography")%>
+<% @photosets.each do |set| %>
+    <%= set.id %>
+<% end %>
