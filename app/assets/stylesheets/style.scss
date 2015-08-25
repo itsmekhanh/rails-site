@@ -625,6 +625,40 @@
 /*------------------  my skills -----------------------*/
 #skills{
   background-color: #E3E3E3;
+  padding-bottom: 60px;
+
+  h2.skills-header{
+    padding: 40px;
+    color: #5c5c5c;
+    font-family: "Open Sans Condensed";
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+
+  .chart{
+    position: relative;
+    .chart-label{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+
+      h1{
+        font-size: 20px;
+        font-family: "Open Sans Condensed";
+
+        @include breakpoint(sm){
+          font-size: 40px;
+        }
+        @include breakpoint(xs){
+          font-size: 18px;
+        }
+      }
+    }
+  }
 
 }
 

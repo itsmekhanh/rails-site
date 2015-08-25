@@ -1,6 +1,9 @@
 /* For responsive breakpoints */
 @mixin breakpoint($class){
-  @if($class == sm){
+  @if ($class == xs){
+    @media(max-width: 360px){@content;}
+  }
+  @else if($class == sm){
     @media(max-width: 768px){@content;}
   }
   @else if($class == md){
