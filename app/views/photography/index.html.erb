@@ -1,4 +1,9 @@
 <% provide(:title, "Photography")%>
-<% @photosets.each do |set| %>
-    <%= set.id %>
-<% end %>
+
+<div id="galleries">
+  <div id="featured-gallery">
+    <img src="<%= "https://farm#{@featured_set['farm']}.staticflickr.com/#{@featured_set['server']}/#{@featured_set['id']}_#{@featured_set['secret']}_b.jpg"%>">
+  </div>
+</div>
+<div class="container">
+</div>
