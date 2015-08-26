@@ -9,11 +9,9 @@
 
 #galleries{
   #featured-gallery{
-    overflow: hidden;
-
-    img{
-      width: 100%;
-      height: auto;
-    }
+    height: 50vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }

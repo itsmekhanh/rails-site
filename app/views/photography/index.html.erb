@@ -1,8 +1,7 @@
 <% provide(:title, "Photography")%>
 
 <div id="galleries">
-  <div id="featured-gallery">
-    <img src="<%= "https://farm#{@featured_set['farm']}.staticflickr.com/#{@featured_set['server']}/#{@featured_set['id']}_#{@featured_set['secret']}_b.jpg"%>">
+  <div id="featured-gallery" style="background-image: url('<%= @featured_set[:cover_image]%>')">
   </div>
 </div>
 <div class="container">
