@@ -19,3 +19,4 @@
 //= require react_ujs
 //= require components
 //= require chartist.min
+//= require shared
