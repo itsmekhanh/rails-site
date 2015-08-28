@@ -24,6 +24,15 @@ class FlickrManager
     return sets
   end
 
+  def get_photos(photoset_id, page=1, perPage=500)
+    photos = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :perPage => perPage
+    if photos.flickr_type == 'photoset'
+      return photos['photo']
+    else
+      return nil
+    end
+  end
+
   def getImageUrl(data, size="b")
     id = data["id"]
     farm = data["farm"]

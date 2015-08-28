@@ -1,8 +1,23 @@
 <% provide(:title, "Photography")%>
 
 <div id="galleries">
-  <div id="featured-gallery" style="background-image: url('<%= @featured_set[:cover_image]%>')"></div>
+  <a href="<%= gallery_path(@featured_set[:id], @featured_set[:title].downcase.tr(" ","-")) %>">
+      <div id="featured-gallery" class="photoset" style="background-image: url('<%= @featured_set[:cover_image]%>')">
+        <div class="overlay">
+          <h2 class="text-center vcenter"><%= @featured_set[:title] %></h2>
+        </div>
+      </div>
+  </a>
   <div id="photosets">
-    
+    <% @sets.each do |set| %>
+        <a href="<%= gallery_path(set[:id], set[:title].downcase.tr(" ","-")) %>">
+          <div class="col-md-4 photoset" style="background-image: url('<%= set[:cover_image]%>')">
+            <div class="overlay">
+                <h2 class="text-center vcenter"><%= set[:title] %></h2>
+            </div>
+          </div>
+        </a>
+    <% end %>
+    <div class="clearfix"></div>
   </div>
 </div>
