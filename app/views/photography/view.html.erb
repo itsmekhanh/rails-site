@@ -1,2 +1,6 @@
-<h1>Photography#view</h1>
-<p>Find me in app/views/photography/view.html.erb</p>
+<% provide(:title, "Gallery")%>
+
+
+<div id="gallery">
+  <%= react_component("Gallery", {photos: @photos}) %>
+</div>

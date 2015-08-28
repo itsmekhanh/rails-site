@@ -25,9 +25,20 @@ class FlickrManager
   end
 
   def get_photos(photoset_id, page=1, perPage=500)
-    photos = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :perPage => perPage
-    if photos.flickr_type == 'photoset'
-      return photos['photo']
+    data = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :perPage => perPage
+    photos = []
+    if data.flickr_type == 'photoset'
+      data['photo'].each do |photo|
+        photos << {
+            'id'=>photo['id'],
+            'secret'=>photo['secret'],
+            'server'=>photo['server'],
+            'farm'=>photo['farm'],
+            'title'=>photo['title'],
+            'image_url'=>self.getImageUrl(photo)
+        }
+      end
+      return photos
     else
       return nil
     end

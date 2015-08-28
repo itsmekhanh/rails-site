@@ -17,6 +17,6 @@
 //= require jquery.turbolinks
 //= require react
 //= require react_ujs
-//= require components
+//= require_tree ./components/
 //= require chartist.min
 //= require shared

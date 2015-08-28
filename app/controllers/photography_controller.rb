@@ -8,11 +8,9 @@ class PhotographyController < ApplicationController
 
   def view
     manager = FlickrManager.new
-    photos = manager.get_photos(params[:id])
+    @photos = manager.get_photos(params[:id])
 
-    if !photos.empty?
-
-    else
+    if @photos.empty?
       redirect_to(index)
     end
   end

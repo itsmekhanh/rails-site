@@ -6,7 +6,6 @@ var Blog = React.createClass({
         }
     },
     render: function(){
-        posts = this.props.posts;
         return (
             <div>
                 <Posts posts={this.props.posts} />
