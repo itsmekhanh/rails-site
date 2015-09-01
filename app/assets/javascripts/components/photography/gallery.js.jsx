@@ -5,19 +5,21 @@ var Gallery = React.createClass({
        };
    },
    render: function(){
-       var numPhotos = this.props.count;
-       var numSets = numPhotos / this.props.photosPerSet;
+       var numPhotos = this.props.photos.length;
+       var numSets = Math.floor(numPhotos / this.props.pageSize);
        var subsets = [];
 
-       numSets = numPhotos % this.props.photosPerSet > 0 ? numSets+1 : numSets;
+       numSets = numPhotos % this.props.pageSize > 0 ? numSets+1 : numSets;
+
+       sets = [];
 
        for(var i=0; i<numSets; i++){
-           subsets[i] = <Subset key=i photos={SOMETHING HERE}/>
-       }
 
+           data = this.props.photos.slice(i*this.props.pageSize,i*this.props.pageSize+this.props.pageSize);
+       }
        return (
            <div>
-
+               <Subset photos={data} />
            </div>
        );
    }

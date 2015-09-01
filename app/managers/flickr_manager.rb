@@ -24,8 +24,8 @@ class FlickrManager
     return sets
   end
 
-  def get_photos(photoset_id, page=1, perPage=500)
-    data = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :perPage => perPage
+  def get_photos(photoset_id, page=1, per_set=500)
+    data = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :perPage => per_set
     photos = []
     if data.flickr_type == 'photoset'
       data['photo'].each do |photo|
