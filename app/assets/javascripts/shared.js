@@ -21,11 +21,9 @@ $(document).ready(function(){
         if($(this).scrollTop() > app.menuBgThreshold && !app.showSmallMenu){
             $navigationMenu.removeClass("hide-bg").addClass("show-bg");
             app.showSmallMenu = true;
-            console.log("showing");
         }else if( $(this).scrollTop() < app.menuBgThreshold){
             $navigationMenu.removeClass("show-bg").addClass("hide-bg");
             app.showSmallMenu = false;
-            console.log("hiding");
         }
     });
 

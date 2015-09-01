@@ -1,12 +1,11 @@
 var Subset = React.createClass({
     render: function(){
-
-        var photos = this.props.photos.map(function(photo){
-            return <Photo url={photo["image_url"]} />
+        var photos = this.props.photos.map(function(photo, index){
+            return <Photo url={photo["image_url"]} key={index}/>
         });
 
         return (
-            <div>
+            <div className="subset">
                 {photos}
             </div>
         )

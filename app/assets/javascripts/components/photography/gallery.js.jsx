@@ -19,7 +19,7 @@ var Gallery = React.createClass({
            sets[i] = <Subset key={i} photos={data}/>
        }
        return (
-           <div>
+           <div id="photo-container">
                {sets}
            </div>
        );

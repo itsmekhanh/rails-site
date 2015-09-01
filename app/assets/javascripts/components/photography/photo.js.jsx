@@ -3,7 +3,7 @@ var Photo = React.createClass({
         var overlay = "overlay "+this.props.active? "active":"";
         return (
             <div className="photo">
-                <div class={overlay}>
+                <div className={overlay}>
                 </div>
                 <img src={this.props.url} />
             </div>

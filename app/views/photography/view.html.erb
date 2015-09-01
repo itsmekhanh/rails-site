@@ -1,32 +1,4 @@
 <% provide(:title, "Gallery")%>
-
-
 <div id="gallery">
-    <div id="photo-container">
-        <div class="subset">
-            <div class="photo">
-              <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-            </div>
-            <div class="photo">
-                <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-            </div>
-            <div class="photo">
-                <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-            </div>
-        </div>
-        <div class="subset">
-          <div class="photo">
-            <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-          </div>
-          <div class="photo">
-            <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-          </div>
-          <div class="photo">
-            <img src="https://farm6.staticflickr.com/5729/20663048935_ae7c43c7ff_b.jpg">
-          </div>
-        </div>
-    </div>
-    <div id="thumbnail-container">
-
-    </div>
+    <%= react_component("Gallery", {photos: @photos, pageSize: @per_set}) %>
 </div>
