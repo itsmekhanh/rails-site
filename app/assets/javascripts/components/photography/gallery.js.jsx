@@ -1,7 +1,8 @@
 var Gallery = React.createClass({
    getInitialState: function(){
        return {
-           currentImage: 1
+           currentImage: 0,
+           currentSubset: 0
        };
    },
    render: function(){
@@ -14,12 +15,12 @@ var Gallery = React.createClass({
        sets = [];
 
        for(var i=0; i<numSets; i++){
-
            data = this.props.photos.slice(i*this.props.pageSize,i*this.props.pageSize+this.props.pageSize);
+           sets[i] = <Subset key={i} photos={data}/>
        }
        return (
            <div>
-               <Subset photos={data} />
+               {sets}
            </div>
        );
    }
