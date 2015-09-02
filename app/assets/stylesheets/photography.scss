@@ -61,9 +61,8 @@
 
 /*------------ Individual Galleries -------------*/
 #gallery{
-  width: 400000px;
   height: 100vh;
-  position: relative;
+  width: 400000px;
   background-color: #000000;
   #photos{
     top: 52px;
@@ -73,9 +72,28 @@
     .photo{
       height: 100%;
       float: left;
+      position: relative;
+      .overlay{
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.75);
+        &.active{
+          display: block;
+        }
+
+      }
+
       img{
         height: 100%;
       }
     }
+  }
+
+  .test{
+    width: 500px;
+    height: 500px;
+    background-color: red;
   }
 }

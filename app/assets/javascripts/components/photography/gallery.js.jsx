@@ -6,6 +6,11 @@ var Gallery = React.createClass({
            photos: this.props.photos,
        };
    },
+   changePhoto: function(index){
+       this.setState({
+           currentImage: index
+       });
+   },
    componentDidMount(){
        //$.get(this.props.source, function(photos){
        //    if (photos){
@@ -21,9 +26,8 @@ var Gallery = React.createClass({
    },
    render: function(){
        return (
-           <div id="photo-container">
-               <Photos photos={this.state.photos} currentImage={this.state.currentImage}/>
-               <div className="clearfix"></div>
+           <div>
+            <Photos photos={this.state.photos} currentImage={this.state.currentImage} changePhoto={this.changePhoto}/>
            </div>
        );
    }
