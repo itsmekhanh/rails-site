@@ -62,14 +62,14 @@
 /*------------ Individual Galleries -------------*/
 #gallery{
   overflow: auto;
-  #photo-container{
-    width: 20000000px;
-    .subset{
-      float: left;
-      .photo{
-        float: left;
+  #photos{
+    white-space: nowrap;
+    height: 80vh;
+    .photo{
+      display: inline;
+      img{
+        height: 100%;
       }
     }
   }
-
 }

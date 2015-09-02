@@ -2,27 +2,27 @@ var Gallery = React.createClass({
    getInitialState: function(){
        return {
            currentImage: 0,
-           currentSubset: 0
+           finished: false,
+           photos: this.props.photos,
        };
    },
-
-   slide: function(subset, photo){
-       console.log('clicked on image: '+subset+", "+photo);
+   componentDidMount(){
+       //$.get(this.props.source, function(photos){
+       //    if (photos){
+       //        this.setState({
+       //           photos: this.state.photos.concat(photos)
+       //        });
+       //    }else{
+       //        this.setState({
+       //            finished: true
+       //        });
+       //    }
+       //}.bind(this));
    },
    render: function(){
-       var numPhotos = this.props.photos.length;
-       var numSets = Math.floor(numPhotos / this.props.pageSize);
-       var subsets = [];
-
-       numSets = numPhotos % this.props.pageSize > 0 ? numSets+1 : numSets;
-
-       for(var i=0; i<numSets; i++){
-           data = this.props.photos.slice(i*this.props.pageSize,i*this.props.pageSize+this.props.pageSize);
-           subsets[i] = <Subset key={i} photos={data} handleClick={this.slide} index={i} />
-       }
        return (
            <div id="photo-container">
-               {subsets}
+               <Photos photos={this.state.photos} currentImage={this.state.currentImage}/>
            </div>
        );
    }
