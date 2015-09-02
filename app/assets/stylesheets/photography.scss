@@ -62,15 +62,16 @@
 /*------------ Individual Galleries -------------*/
 #gallery{
   height: 100vh;
-  width: 400000px;
   background-color: #000000;
+  overflow: hidden;
   #photos{
+    width: 400000px;
     top: 52px;
-    overflow: auto;
     height: 80vh;
     position: relative;
     .photo{
       height: 100%;
+      margin-left: 4px;
       float: left;
       position: relative;
       .overlay{
@@ -82,18 +83,10 @@
         &.active{
           display: block;
         }
-
       }
-
       img{
         height: 100%;
       }
     }
-  }
-
-  .test{
-    width: 500px;
-    height: 500px;
-    background-color: red;
   }
 }

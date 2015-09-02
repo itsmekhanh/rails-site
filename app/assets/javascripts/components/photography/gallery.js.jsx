@@ -4,11 +4,13 @@ var Gallery = React.createClass({
            currentImage: 0,
            finished: false,
            photos: this.props.photos,
+           position: 0,
        };
    },
-   changePhoto: function(index){
+   changePhoto: function(index, position){
        this.setState({
-           currentImage: index
+           currentImage: index,
+           position: position
        });
    },
    componentDidMount(){
@@ -27,7 +29,9 @@ var Gallery = React.createClass({
    render: function(){
        return (
            <div>
-            <Photos photos={this.state.photos} currentImage={this.state.currentImage} changePhoto={this.changePhoto}/>
+            <Photos photos={this.state.photos} currentImage={this.state.currentImage} changePhoto={this.changePhoto}
+                position = {this.state.position}
+                />
            </div>
        );
    }
