@@ -23,6 +23,7 @@ var Gallery = React.createClass({
        return (
            <div id="photo-container">
                <Photos photos={this.state.photos} currentImage={this.state.currentImage}/>
+               <div className="clearfix"></div>
            </div>
        );
    }

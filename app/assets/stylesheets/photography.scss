@@ -61,12 +61,18 @@
 
 /*------------ Individual Galleries -------------*/
 #gallery{
-  overflow: auto;
+  width: 400000px;
+  height: 100vh;
+  position: relative;
+  background-color: #000000;
   #photos{
-    white-space: nowrap;
+    top: 52px;
+    overflow: auto;
     height: 80vh;
+    position: relative;
     .photo{
-      display: inline;
+      height: 100%;
+      float: left;
       img{
         height: 100%;
       }
