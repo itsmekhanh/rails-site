@@ -10,6 +10,7 @@ class PhotographyController < ApplicationController
     manager = FlickrManager.new
     @per_set = 8
     @photos = manager.get_photos(params[:id], 1, @per_set)
+    @url = photography_get_url(params[:id])
 
     if @photos.empty?
       redirect_to(index)
@@ -17,6 +18,18 @@ class PhotographyController < ApplicationController
   end
 
   def get
-    
+    if request.xhr?
+      manager = FlickrManager.new
+      @per_set = 8
+
+      begin
+        @photos = manager.get_photos(params[:id], params[:page], @per_set)
+      rescue
+        @photos = []
+      end
+      render json: @photos
+    else
+      redirect_to(index)
+    end
   end
 end

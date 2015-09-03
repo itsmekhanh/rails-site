@@ -12,9 +12,7 @@ var Photos = React.createClass({
 
     },
     handlingClick: function(e){
-        var active = $(e.currentTarget);
-        var offset = ($(window).width()-active.width())/2;
-        this.props.changePhoto(e.currentTarget.getAttribute("data-index"),offset-active.position().left);
+        this.props.changePhoto(parseInt(e.currentTarget.getAttribute("data-index")));
     },
     render: function(){
         var currentImage = this.props.currentImage;

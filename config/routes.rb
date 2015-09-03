@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'photography'=>'photography#index'
+  get 'photography/gallery/:id/get', to: 'photography#get', as: 'photography_get'
   get 'photography/gallery/:id/*name', to: 'photography#view', as: 'gallery'
 
   get 'blog' => 'blog#index'
