@@ -8,6 +8,14 @@ var Gallery = React.createClass({
        };
    },
    changePhoto: function(index, position){
+
+       // get more photos
+       if(index > this.props.photos.length-5 && !finished){
+           $.get(this.props.url, function(data){
+
+           });
+       }
+
        this.setState({
            currentImage: index,
            position: position
