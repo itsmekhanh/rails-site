@@ -11,16 +11,18 @@ var Photos = React.createClass({
 
 
     },
+    componentDidUpdate: function(){
+        var active = $(React.findDOMNode(this)).find(".photo[data-index='"+this.props.currentImage+"']");
+        var offset = ($(window).width()-active.width())/2;
+        $(React.findDOMNode(this.refs.photos)).css({left: offset-active.position().left});
+    },
     handlingClick: function(e){
         this.props.changePhoto(parseInt(e.currentTarget.getAttribute("data-index")));
     },
     render: function(){
-        var currentImage = this.props.currentImage;
+
         var photos = [];
         var overlay = "";
-        var style = {
-            left: this.props.position+"px"
-        }
 
         for(var i=0; i<this.props.photos.length; i++){
             overlay = i == this.props.currentImage ? "" : "active";
@@ -34,7 +36,7 @@ var Photos = React.createClass({
         }
 
         return (
-            <div id="photos" style={style} ref="photos">
+            <div id="photos" ref="photos">
                 {photos}
             </div>
         );

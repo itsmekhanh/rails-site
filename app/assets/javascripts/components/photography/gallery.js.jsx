@@ -4,7 +4,6 @@ var Gallery = React.createClass({
            currentImage: 0,
            finished: false,
            photos: this.props.photos,
-           position: 0,
        };
    },
    componentDidMount: function(){
@@ -24,11 +23,6 @@ var Gallery = React.createClass({
    changePhoto: function(index){
        var page = Math.floor(this.state.photos.length/this.props.pageSize)+1
        var photos = this.state.photos;
-       
-       if(this.isMounted()){
-           var active = $(React.findDOMNode(this)).find("#photos .photo[data-index='"+index+"']");
-           var offset = ($(window).width()-active.width())/2;
-       }
 
        // get more photos
        if(index > this.state.photos.length-5 && !this.state.finished){
@@ -43,11 +37,7 @@ var Gallery = React.createClass({
 
        this.setState({
            currentImage: index,
-           position: offset-active.position().left,
        });
-   },
-   keyDown: function(e){
-       console.log(e);
    },
    render: function(){
        return (
@@ -56,8 +46,6 @@ var Gallery = React.createClass({
                 photos={this.state.photos}
                 currentImage={this.state.currentImage}
                 changePhoto={this.changePhoto}
-                position = {this.state.position}
-
             />
            </div>
        );

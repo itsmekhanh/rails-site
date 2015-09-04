@@ -24,7 +24,7 @@ class FlickrManager
     return sets
   end
 
-  def get_photos(photoset_id, page=1, per_set=500)
+  def get_photos(photoset_id, page=1, per_set=500, size="b")
     data = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :per_page => per_set
     photos = []
     if data.flickr_type == 'photoset'
@@ -35,7 +35,7 @@ class FlickrManager
             'server'=>photo['server'],
             'farm'=>photo['farm'],
             'title'=>photo['title'],
-            'image_url'=>self.getImageUrl(photo)
+            'image_url'=>self.getImageUrl(photo, size)
         }
       end
       return photos
