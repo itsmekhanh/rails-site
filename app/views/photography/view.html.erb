@@ -1,4 +1,4 @@
 <% provide(:title, "Gallery")%>
 <div id="gallery">
-    <%= react_component("Gallery", {photos: @photos, pageSize: @per_set, url: @url}) %>
+    <%= react_component("Gallery", {photos: @photos, pageSize: @per_set, url: @url, thumbnails: @thumbnails}) %>
 </div>

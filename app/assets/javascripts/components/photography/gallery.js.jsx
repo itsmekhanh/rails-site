@@ -42,11 +42,12 @@ var Gallery = React.createClass({
    render: function(){
        return (
            <div>
-            <Photos
-                photos={this.state.photos}
-                currentImage={this.state.currentImage}
-                changePhoto={this.changePhoto}
-            />
+
+               <Thumbnails
+                   thumbnails={this.props.thumbnails}
+                   currentImage={this.state.currentImage}
+                   changeThumbnail={this.changePhoto}
+               />
            </div>
        );
    }

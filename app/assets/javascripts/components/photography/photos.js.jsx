@@ -34,7 +34,6 @@ var Photos = React.createClass({
                 </div>
             );
         }
-
         return (
             <div id="photos" ref="photos">
                 {photos}

@@ -67,7 +67,7 @@
   #photos{
     width: 400000px;
     top: 52px;
-    height: 80vh;
+    height: calc(100% - 100px);
     position: relative;
     transition: left .75s ease-in-out;
 
@@ -89,6 +89,36 @@
       }
       img{
         height: 100%;
+      }
+    }
+  }
+  #thumbnail-container{
+    width: 80vw;
+    overflow: hidden;
+    #thumbnails{
+      width: 400000px;
+      height: 100px;
+      position: relative;
+      .photo-thumbnail{
+        height: 100%;
+        width: 10vw;
+        float: left;
+        position: relative;
+        background-size: cover;
+        .overlay{
+          position: absolute;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,.75);
+          &.active{
+            opacity: 1;
+          }
+          transition: opacity 0.75s ease-in-out
+        }
+        img{
+          height: 100%;
+        }
       }
     }
   }
