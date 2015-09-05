@@ -23,7 +23,7 @@ var Thumbnails = React.createClass({
         }
 
         return (
-            <div id="thumbnail-container">
+            <div id="thumbnail-container" className="center-block">
                 <div id="thumbnails" ref="thumbnails">
                     {thumbnails}
                 </div>

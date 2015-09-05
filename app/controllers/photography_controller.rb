@@ -11,7 +11,7 @@ class PhotographyController < ApplicationController
     @per_set = 8
     @photos = manager.get_photos(params[:id], 1, @per_set)
     @url = photography_get_url(params[:id])
-    @thumbnails = manager.get_photos(params[:id], 1, 500, "t")
+    @thumbnails = manager.get_photos(params[:id], 1, 500, "m")
 
     if @photos.empty?
       redirect_to(index)

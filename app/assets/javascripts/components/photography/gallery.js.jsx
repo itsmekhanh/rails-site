@@ -24,6 +24,9 @@ var Gallery = React.createClass({
        var page = Math.floor(this.state.photos.length/this.props.pageSize)+1
        var photos = this.state.photos;
 
+       console.log("index "+index);
+       console.log("photo length "+this.state.photos.length);
+
        // get more photos
        if(index > this.state.photos.length-5 && !this.state.finished){
            $.get(this.props.url, {page: page}, function(data){
@@ -38,17 +41,23 @@ var Gallery = React.createClass({
        this.setState({
            currentImage: index,
        });
+
    },
    render: function(){
        return (
            <div>
-
+               <Photos
+                   photos={this.state.photos}
+                   currentImage={this.state.currentImage}
+                   changePhoto={this.changePhoto}
+               />
                <Thumbnails
                    thumbnails={this.props.thumbnails}
                    currentImage={this.state.currentImage}
-                   changeThumbnail={this.changePhoto}
+                   changePhoto={this.changePhoto}
                />
            </div>
+
        );
    }
 });
