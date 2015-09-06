@@ -1,6 +1,12 @@
 var Thumbnails = React.createClass({
+    componentDidUpdate: function(){
+        if(this.props.currentImage % this.props.pageSize === 0 || this.props.currentImage % this.props.pageSize === this.props.pageSize-1){
+            var thumbnailContainer = $(React.findDOMNode(this.refs.thumbnails));
+            var active = thumbnailContainer.find(".photo-thumbnail[data-index='"+this.props.currentImage+"']");
+            thumbnailContainer.css({left: active.position().left});
+        }
+    },
     handleClick: function(e){
-        console.log(e.currentTarget);
         this.props.changeThumbnail(parseInt(e.currentTarget.getAttribute("data-index")));
     },
     render: function(){

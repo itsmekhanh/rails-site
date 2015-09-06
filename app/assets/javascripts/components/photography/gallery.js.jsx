@@ -54,7 +54,8 @@ var Gallery = React.createClass({
                <Thumbnails
                    thumbnails={this.props.thumbnails}
                    currentImage={this.state.currentImage}
-                   changePhoto={this.changePhoto}
+                   changeThumbnail={this.changePhoto}
+                   pageSize={this.props.pageSize}
                />
            </div>
 
