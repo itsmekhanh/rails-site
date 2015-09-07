@@ -86,11 +86,26 @@
         &.active{
           opacity: 1;
         }
-        transition: opacity 0.75s ease-in-out
+        transition: opacity 0.75s ease-in-out;
+        @include breakpoint(sm){
+          display: none;
+        }
       }
       img{
         height: 100%;
+        @include breakpoint(sm){
+          height: auto;
+          width: 100%;
+        }
       }
+      @include breakpoint(sm){
+        width: 100%;
+        float: none;
+      }
+    }
+    @include breakpoint(sm){
+      width: 100vw;
+      height: auto;
     }
   }
 
@@ -133,5 +148,13 @@
         }
       }
     }
+    @include breakpoint(sm){
+      display: none;
+    }
+  }
+
+  @include breakpoint(sm){
+    height: auto;
+    overflow: visible;
   }
 }
