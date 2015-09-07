@@ -1,9 +1,16 @@
 var Thumbnails = React.createClass({
+    getInitialState: function(){
+        return {
+            currentSet: 0
+        }
+    },
     componentDidUpdate: function(){
-        if(this.props.currentImage % this.props.pageSize === 0 || this.props.currentImage % this.props.pageSize === this.props.pageSize-1){
+        var subset = Math.floor(this.props.currentImage / this.props.pageSize);
+        if(subset != this.state.currentSet){
+            this.state.currentSet = subset;
             var thumbnailContainer = $(React.findDOMNode(this.refs.thumbnails));
-            var active = thumbnailContainer.find(".photo-thumbnail[data-index='"+this.props.currentImage+"']");
-            thumbnailContainer.css({left: active.position().left});
+            var active = thumbnailContainer.find(".photo-thumbnail[data-index='"+(subset*this.props.pageSize)+"']");
+            thumbnailContainer.css({left: -active.position().left});
         }
     },
     handleClick: function(e){
@@ -29,12 +36,13 @@ var Thumbnails = React.createClass({
         }
 
         return (
-            <div id="thumbnail-container" className="center-block">
-                <div id="thumbnails" ref="thumbnails">
-                    {thumbnails}
+            <div id="slider">
+                <div id="slider-container" className="center-block clearfix">
+                    <div id="thumbnails" ref="thumbnails">
+                        {thumbnails}
+                    </div>
                 </div>
             </div>
-
         );
     }
 });
