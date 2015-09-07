@@ -74,7 +74,7 @@
 
     .photo{
       height: 100%;
-      margin-left: 4px;
+      margin-right: 4px;
       float: left;
       position: relative;
       .overlay{
@@ -101,11 +101,16 @@
       @include breakpoint(sm){
         width: 100%;
         float: none;
+        margin-right: 0px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #000000;
       }
     }
     @include breakpoint(sm){
-      width: 100vw;
+      width: 100%;
       height: auto;
+      left: 0px;
     }
   }
 

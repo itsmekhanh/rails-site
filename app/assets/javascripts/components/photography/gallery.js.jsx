@@ -21,14 +21,22 @@ var Gallery = React.createClass({
        }.bind(this));
    },
    changePhoto: function(index){
-       var page = Math.floor(this.state.photos.length/this.props.pageSize)+1
-       var photos = this.state.photos;
-
-       console.log("index "+index);
-       console.log("photo length "+this.state.photos.length);
 
        // get more photos
        if(index > this.state.photos.length-5 && !this.state.finished){
+           this.getPhotos();
+       }
+
+       this.setState({
+           currentImage: index,
+       });
+
+   },
+   getPhotos: function(currentIndex){
+       var page = Math.floor(this.state.photos.length/this.props.pageSize)+1;
+       var photos = this.state.photos;
+
+       if(!this.state.finished){
            $.get(this.props.url, {page: page}, function(data){
                photos = photos.concat(data);
                this.setState({
@@ -37,11 +45,6 @@ var Gallery = React.createClass({
                });
            }.bind(this));
        }
-
-       this.setState({
-           currentImage: index,
-       });
-
    },
    render: function(){
        return (
