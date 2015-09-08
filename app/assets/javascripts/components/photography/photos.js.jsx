@@ -22,14 +22,11 @@ var Photos = React.createClass({
     },
     componentDidUpdate: function(prevProps, prevState){
         if(this.isMounted()){
-            if(prevProps.currentImage == this.props.currentImage){
-                var active = $(React.findDOMNode(this)).find(".photo[data-index='"+this.props.currentImage+"']");
-                var offset = 0;
+            var active = $(React.findDOMNode(this)).find(".photo[data-index='"+this.props.currentImage+"']");
+            var offset = 0;
 
-                offset = ($(window).width()-active.width())/2;
-                $(React.findDOMNode(this.refs.photos)).css({left: offset-active.position().left});
-
-            }
+            offset = ($(window).width()-active.width())/2;
+            $(React.findDOMNode(this.refs.photos)).css({left: offset-active.position().left});
         }
     },
     scrollTo: function(){

@@ -37,11 +37,18 @@ var Thumbnails = React.createClass({
 
         return (
             <div id="slider">
-                <div id="slider-container" className="center-block clearfix">
+                <div className="slide">
+                    <span className="glyphicon glyphicon-menu-left"></span>
+                </div>
+                <div id="slider-container">
                     <div id="thumbnails" ref="thumbnails">
                         {thumbnails}
                     </div>
                 </div>
+                <div className="slide">
+                    <span className="glyphicon glyphicon-menu-right"></span>
+                </div>
+                <div className="clearfix"></div>
             </div>
         );
     }

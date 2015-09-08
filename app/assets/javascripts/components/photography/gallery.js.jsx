@@ -26,13 +26,12 @@ var Gallery = React.createClass({
        if(index > this.state.photos.length-5 && !this.state.finished){
            this.getPhotos();
        }
-
        this.setState({
            currentImage: index,
        });
 
    },
-   getPhotos: function(currentIndex){
+   getPhotos: function(){
        var page = Math.floor(this.state.photos.length/this.props.pageSize)+1;
        var photos = this.state.photos;
 

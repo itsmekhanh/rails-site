@@ -9,7 +9,7 @@ class PhotographyController < ApplicationController
   def view
     manager = FlickrManager.new
     @per_set = 8
-    @photos = manager.get_photos(params[:id], 1, @per_set)
+    @photos = manager.get_photos(params[:id], 1, @per_set*2)
     @url = photography_get_url(params[:id])
     @thumbnails = manager.get_photos(params[:id], 1, 500, "m")
 
