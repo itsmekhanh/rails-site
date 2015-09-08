@@ -13,12 +13,30 @@ var Thumbnails = React.createClass({
             thumbnailContainer.css({left: -active.position().left});
         }
     },
+    slidePrev: function(){
+        var page = Math.floor(this.props.currentImage / this.props.pageSize);
+        if(page > 0){
+            this.props.changeThumbnail(this.props.pageSize*(page)-1);
+        }
+    },
+    slideNext: function(){
+        var page = Math.floor(this.props.currentImage / this.props.pageSize);
+        var nextImage = this.props.pageSize*(page+1);
+        if( nextImage < this.props.thumbnails.length){
+            this.props.changeThumbnail(nextImage);
+        }
+    },
     handleClick: function(e){
         this.props.changeThumbnail(parseInt(e.currentTarget.getAttribute("data-index")));
     },
     render: function(){
         var thumbnails = [];
         var overlay = "";
+        var previous = "glyphicon glyphicon-menu-left";
+        var next = "glyphicon glyphicon-menu-right";
+
+        previous += this.props.currentImage < this.props.pageSize ? " hidden" : "";
+        next += this.props.thumbnails.length - this.props.currentImage < this.props.pageSize ? " hidden" : "";
 
         for(var i=0; i<this.props.thumbnails.length; i++){
             overlay = i == this.props.currentImage? "" : "active";
@@ -38,7 +56,7 @@ var Thumbnails = React.createClass({
         return (
             <div id="slider">
                 <div className="slide">
-                    <span className="glyphicon glyphicon-menu-left"></span>
+                    <span className={previous} onClick={this.slidePrev}></span>
                 </div>
                 <div id="slider-container">
                     <div id="thumbnails" ref="thumbnails">
@@ -46,7 +64,7 @@ var Thumbnails = React.createClass({
                     </div>
                 </div>
                 <div className="slide">
-                    <span className="glyphicon glyphicon-menu-right"></span>
+                    <span className={next} onClick={this.slideNext}></span>
                 </div>
                 <div className="clearfix"></div>
             </div>

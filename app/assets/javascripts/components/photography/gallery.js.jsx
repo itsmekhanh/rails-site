@@ -23,7 +23,7 @@ var Gallery = React.createClass({
    changePhoto: function(index){
 
        // get more photos
-       if(index > this.state.photos.length-5 && !this.state.finished){
+       if(index >= this.state.photos.length-this.props.pageSize && !this.state.finished){
            this.getPhotos();
        }
        this.setState({
@@ -52,6 +52,7 @@ var Gallery = React.createClass({
                    photos={this.state.photos}
                    currentImage={this.state.currentImage}
                    changePhoto={this.changePhoto}
+                   pageSize={this.props.pageSize}
                />
                <Thumbnails
                    thumbnails={this.props.thumbnails}
