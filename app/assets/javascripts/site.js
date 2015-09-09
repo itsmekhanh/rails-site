@@ -1,10 +1,11 @@
 $(document).ready(function(){
+    var donutWidth = 25;
     // charts
     new Chartist.Pie('.ct-chart-php', {
         series: [95,5]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -14,7 +15,7 @@ $(document).ready(function(){
         series: [60,40]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -24,7 +25,7 @@ $(document).ready(function(){
         series: [50,50]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -34,7 +35,7 @@ $(document).ready(function(){
         series: [50,50]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -44,7 +45,7 @@ $(document).ready(function(){
         series: [95,5]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -84,17 +85,7 @@ $(document).ready(function(){
         series: [90,10]
     }, {
         donut: true,
-        donutWidth: 50,
-        startAngle: 0,
-        total: 100,
-        showLabel: false
-    });
-
-    new Chartist.Pie('.ct-chart-mariadb', {
-        series: [90,10]
-    }, {
-        donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
@@ -104,49 +95,10 @@ $(document).ready(function(){
         series: [50,50]
     }, {
         donut: true,
-        donutWidth: 50,
+        donutWidth: donutWidth,
         startAngle: 0,
         total: 100,
         showLabel: false
     });
 
-    new Chartist.Pie('.ct-chart-photography', {
-        series: [95,5]
-    }, {
-        donut: true,
-        donutWidth: 50,
-        startAngle: 0,
-        total: 100,
-        showLabel: false
-    });
-
-    new Chartist.Pie('.ct-chart-drawing', {
-        series: [90,10]
-    }, {
-        donut: true,
-        donutWidth: 50,
-        startAngle: 0,
-        total: 100,
-        showLabel: false
-    });
-
-    new Chartist.Pie('.ct-chart-painting', {
-        series: [90,10]
-    }, {
-        donut: true,
-        donutWidth: 50,
-        startAngle: 0,
-        total: 100,
-        showLabel: false
-    });
-
-    new Chartist.Pie('.ct-chart-dancing', {
-        series: [10,90]
-    }, {
-        donut: true,
-        donutWidth: 50,
-        startAngle: 0,
-        total: 100,
-        showLabel: false
-    });
 });

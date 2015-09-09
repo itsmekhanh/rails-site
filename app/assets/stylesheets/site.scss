@@ -369,35 +369,112 @@
   padding-bottom: 60px;
 
   h2.skills-header{
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
     color: #5c5c5c;
     font-family: "Open Sans Condensed";
     text-transform: uppercase;
     font-size: 40px;
   }
 
-  .chart{
-    position: relative;
-    .chart-label{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
 
-      h1{
-        font-size: 20px;
-        font-family: "Open Sans Condensed";
+  #charts{
+    padding-bottom: 40px;
+    .chart{
+      position: relative;
+      .chart-label{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
 
-        @include breakpoint(sm){
-          font-size: 40px;
-        }
-        @include breakpoint(xs){
-          font-size: 18px;
+        h1{
+          font-size: 20px;
+          font-family: "Open Sans Condensed";
+
+          @include breakpoint(sm){
+            font-size: 40px;
+          }
+          @include breakpoint(xs){
+            font-size: 18px;
+          }
         }
       }
+    }
+  }
+
+
+  .backend{
+    width: 70%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: "Open Sans Condensed";
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    span{
+      display: inline-block;
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-left: 20px;
+    }
+
+    #js{
+      background-color: #556270;
+      height: 100%;
+      width: 90%;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
+    }
+
+    #html{
+      background-color: #49B5AD;
+      height: 100%;
+      width: 90%;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
+    }
+
+    #css{
+      background-color: #FF6B6B;
+      height: 100%;
+      width: 80%;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
+    }
+
+    #react{
+      background-color: #C44D58;
+      height: 100%;
+      width: 75%;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
+    }
+
+    #angular{
+      background-color: #C49644;
+      height: 100%;
+      width: 40%;
+
+      border-radius: 8px 8px 8px 8px;
+      -moz-border-radius: 8px 8px 8px 8px;
+      -webkit-border-radius: 8px 8px 8px 8px;
     }
   }
 }
