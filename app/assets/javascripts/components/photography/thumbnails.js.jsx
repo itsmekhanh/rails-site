@@ -35,7 +35,7 @@ var Thumbnails = React.createClass({
         var previous = "glyphicon glyphicon-menu-left";
         var next = "glyphicon glyphicon-menu-right";
 
-        previous += this.props.currentImage < this.props.pageSize ? " hidden" : "";
+        previous += this.props.currentImage < this.props.pageSize ? " hide-slide" : "";
         next += this.props.thumbnails.length - this.props.currentImage < this.props.pageSize ? " hidden" : "";
 
         for(var i=0; i<this.props.thumbnails.length; i++){

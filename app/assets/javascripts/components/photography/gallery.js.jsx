@@ -22,7 +22,7 @@ var Gallery = React.createClass({
        }.bind(this));
 
        $(window).scroll(function(){
-           if($(this).scrollTop() > $(document).height()/2){
+           if($(this).scrollTop() > ($(document).height()-3000)){
                var next = $("#next-set");
                if(next.length){
                    next.remove();

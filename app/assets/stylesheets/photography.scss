@@ -118,13 +118,12 @@
 
   #slider{
     width: 100%;
+    height: calc(15vh - 52px);
     .slide{
       height: 100%;
       width: 10%;
       float: left;
       font-size: 40px;
-      padding-top: 20px;
-      padding-bottom: 20px;
       transition: color .5s ease-in-out;
       -moz-transition: color .5s ease-in-out;
       -webkit-transition: color .5s ease-in-out;
@@ -135,7 +134,12 @@
       span{
         display: block;
         text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
       }
+    }
+    .hide-slide{
+      visibility: hidden;
     }
     #slider-container{
       width: 80%;

@@ -29,8 +29,10 @@ var Photos = React.createClass({
         }
     },
     scrollTo: function(){
-        var active = $(React.findDOMNode(this.refs.photos)).find(".photo[data-index='"+this.props.currentImage+"']");
-        $(window).scrollTop(active.position().top);
+        if(this.isMounted()){
+            var active = $(React.findDOMNode(this.refs.photos)).find(".photo[data-index='"+this.props.currentImage+"']");
+            $(window).scrollTop(active.position().top);
+        }
     },
     handlingClick: function(e){
         this.props.changePhoto(parseInt(e.currentTarget.getAttribute("data-index")));
