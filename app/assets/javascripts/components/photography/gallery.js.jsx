@@ -22,12 +22,14 @@ var Gallery = React.createClass({
        }.bind(this));
 
        $(window).scroll(function(){
-           var win = $(this);
-           if(win.scrollTop() > $(document).height()/2 && ajax){
-               ajax = false;
-               that.getPhotos();
-               ajax = true;
+           if($(this).scrollTop() > $(document).height()/2){
+               var next = $("#next-set");
+               if(next.length){
+                   next.remove();
+                   that.getPhotos();
+               }
            }
+
        });
    },
    changePhoto: function(index){
@@ -38,23 +40,27 @@ var Gallery = React.createClass({
        this.setState({
            currentImage: index,
        });
-
    },
    getPhotos: function(){
        var page = Math.floor(this.state.photos.length/this.props.pageSize)+1;
        var photos = this.state.photos;
 
-       console.log('getting more photos');
-       if(!this.state.finished){
-           console.log("getting photos");
-           $.get(this.props.url, {page: page}, function(data){
-               photos = photos.concat(data);
-               this.setState({
-                   photos: photos,
-                   finished: data.length < this.props.pageSize
-               });
-           }.bind(this));
+       if(this.isMounted()){
+           if(!this.state.finished){
+               $.get(this.props.url, {page: page}, function(data){
+                   photos = photos.concat(data);
+                   this.setState({
+                       photos: photos,
+                       finished: data.length < this.props.pageSize
+                   });
+                   if(!this.state.finished){
+                       $(React.findDOMNode(this)).append("<div id='next-set'></div>");
+                   }
+
+               }.bind(this));
+           }
        }
+
    },
    render: function(){
        return (
@@ -71,6 +77,7 @@ var Gallery = React.createClass({
                    changeThumbnail={this.changePhoto}
                    pageSize={this.props.pageSize}
                />
+               <div id="next-set"></div>
            </div>
 
        );
