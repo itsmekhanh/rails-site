@@ -101,4 +101,8 @@ $(document).ready(function(){
         showLabel: false
     });
 
+    $("#view-profile").click(function(){
+        $("html, body").animate({scrollTop: ($("#main-banner").height()-$("#main-navigation").height())+"px"}, 1000);
+    });
+
 });

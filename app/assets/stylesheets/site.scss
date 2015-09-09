@@ -6,6 +6,7 @@
 @import "bootstrap";
 @import "shared/fonts";
 @import "shared/mixins/responsive";
+@import "animate.css";
 
 /*--------------------------- Landing Page Banner --------------------------------*/
 #main-banner{
@@ -19,13 +20,58 @@
     background-color: #2E2F30;
     position: absolute;
     opacity: .3;
-    display: none;
   }
 
   #image{
     background: url(image-path("landing-background.jpg")) no-repeat center center;
     height: 100%;
     z-index: 1000;
+    position: relative;
+  }
+
+  #welcome-message{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    h4{
+      font-size: 30px;
+      font-weight: 400;
+      @include breakpoint(sm){
+        font-size: 20px;
+      }
+    }
+    #branding{
+      border-style: solid;
+      border-color: #FFFFFF;
+      border-width: 4px;
+      h1{
+        margin: 20px 20px 20px 20px;
+        font-size: 80px;
+        font-weight: 700;
+        @include breakpoint(sm){
+          font-size: 50px;
+        }
+      }
+    }
+    z-index: 1004;
+  }
+
+  #view-profile{
+    color: white;
+    width: 10%;
+    font-size: 60px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 92%;
+    z-index: 1004;
+    text-align: center;
   }
 }
 
