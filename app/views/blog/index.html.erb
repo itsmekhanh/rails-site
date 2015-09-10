@@ -1,4 +1,15 @@
 <% provide(:title, "Blog") %>
 <div id="blog">
-  <%= react_component("Blog", {posts: @posts}) %>
+    <% @posts.each_with_index do |post, index| %>
+      <% if index % 4 == 0 %>
+        <div class="blog-row">
+      <% end %>
+            <div class="post" style="background-image: url('<%= post[:main_image]%>')">
+              content there.
+            </div>
+      <% if index % 4 == 3 %>
+        </div>
+      <% end %>
+    <% end %>
 </div>
+<div class="clearfix"></div>

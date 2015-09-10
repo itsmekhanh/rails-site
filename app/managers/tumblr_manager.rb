@@ -27,6 +27,7 @@ class TumblrManager
 
   def filterPost(post)
     require 'rails/html/sanitizer'
+    require 'nokogiri'
 
     sanitizer = Rails::Html::FullSanitizer.new
     time = Time.at(post['timestamp'])
@@ -45,10 +46,16 @@ class TumblrManager
       when "text"
         data[:body] = post['body']
         data[:title] = sanitizer.sanitize(post['title'])
+
+        html = Nokogiri::HTML(post['body'])
+        img = html.css("img").first
+        data[:main_image] = img['src']
+
       when "video"
         data[:body] = post['player'][2]['embed_code']
         data[:title] = sanitizer.sanitize(post['caption'])
         data[:thumbnail_url] = post['thumbnail_url']
+        data[:main_image] = post['thumbnail_url']
     end
 
     return data

@@ -9,56 +9,102 @@
 
 /* ----------------------------------- Blog -------------------------------*/
 #blog{
+  width: 100%;
   font-family: "Open Sans Condensed";
-  .post{
-    display: block;
-    min-height: 400px;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
 
-    -webkit-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
-    -moz-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
-    box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
-
-    .overlay{
-      position: absolute;
-      background-color: rgba(0,0,0,.2);
-      height: 100%;
-      width: 100%;
-
-      h2{
-        color: #FFFFFF;
-        padding: 0px 10px 0px 10px;
-        text-shadow: 0px 0px 10px rgba(0,0,0,1);
-        text-transform: uppercase;
-        margin-top: 0px;
-      }
-
-      @include breakpoint(sm){
-        h2{
-          font-size: 24px;
-        }
-      }
-    }
-  }
-
-
-  .full{
+  .blog-row{
     width: 100%;
-    clear: both;
-  }
+    height: auto;
+    position: relative;
+    .post{
 
-  .half{
-    float: left;
-    width: 50%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
 
-    @include breakpoint(sm){
-      float: none;
-      width: 100%;
+      
+
+      &:nth-of-type(1){
+        height: 100vh;
+        width: 50%;
+        background-color: green;
+        float: left;
+      }
+      &:nth-of-type(2){
+        width: 50%;
+        height: 50vh;
+        background-color: red;
+        float: left;
+      }
+      &:nth-of-type(3){
+        width: 25%;
+        height: 50vh;
+        background-color: blue;
+        float:left;
+      }
+      &:nth-of-type(4) {
+        width: 25%;
+        height: 50vh;
+        background-color: #49B5AD;
+        float: left;
+      }
+      &:only-child{
+        width: 100%;
+        height: 50vh;
+        background-color: #a748ca;
+      }
     }
   }
+
+  //.post{
+  //  display: block;
+  //  min-height: 400px;
+  //  height: 100%;
+  //  background-repeat: no-repeat;
+  //  background-position: center center;
+  //  position: relative;
+  //
+  //  -webkit-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+  //  -moz-box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+  //  box-shadow: inset 0px 0px 25px 6px rgba(0,0,0,0.25);
+  //
+  //  .overlay{
+  //    position: absolute;
+  //    background-color: rgba(0,0,0,.2);
+  //    height: 100%;
+  //    width: 100%;
+  //
+  //    h2{
+  //      color: #FFFFFF;
+  //      padding: 0px 10px 0px 10px;
+  //      text-shadow: 0px 0px 10px rgba(0,0,0,1);
+  //      text-transform: uppercase;
+  //      margin-top: 0px;
+  //    }
+  //
+  //    @include breakpoint(sm){
+  //      h2{
+  //        font-size: 24px;
+  //      }
+  //    }
+  //  }
+  //}
+  //
+  //
+  //.full{
+  //  width: 100%;
+  //  clear: both;
+  //}
+  //
+  //.half{
+  //  float: left;
+  //  width: 50%;
+  //
+  //  @include breakpoint(sm){
+  //    float: none;
+  //    width: 100%;
+  //  }
+  //}
 }
 
 /* --------------- Main Post -------------------------------*/
