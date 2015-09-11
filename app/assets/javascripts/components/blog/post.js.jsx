@@ -24,7 +24,14 @@ var Post = React.createClass({
        return (
            <a href={url} className={className} style={divStyle}>
                <div className="overlay">
-                   <h2 className="text-center vcenter">{post.title}</h2>
+                   <div className="border"></div>
+                   <h2 className="text-center vcenter">
+                       {post.title}
+                       <hr/>
+                       <div className="date">
+                           {post.date}
+                       </div>
+                   </h2>
                </div>
            </a>
        );
