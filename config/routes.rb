@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'blog' => 'blog#index'
   get 'blog/post/:id/*name' => 'blog#post'
 
+  get 'code' => 'code#index'
+  get 'code/project/:id/*name', to: 'code#view', as: 'project'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

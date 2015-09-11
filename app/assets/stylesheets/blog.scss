@@ -36,29 +36,6 @@
       height: 100%;
       width: 100%;
 
-      h2{
-        color: #FFFFFF;
-        padding: 0px 10px 0px 10px;
-        text-shadow: 0px 0px 10px rgba(0,0,0,1);
-        text-transform: uppercase;
-        margin-top: 0px;
-        font-size: 40px;
-      }
-      hr{
-        width: 25%;
-      }
-
-      .date{
-        font-family: "Open Sans Condensed";
-        font-size: 20px;
-      }
-
-      @include breakpoint(sm){
-        h2{
-          font-size: 24px;
-        }
-      }
-
       .border{
         top: 50%;
         left: 50%;
@@ -68,17 +45,39 @@
         height: 80%;
         margin: 0 auto;
         border-style: solid;
-        border-color: #FFFFFF;
-        border-width: 4px;
-        opacity: 0;
+        border-color: #dbdbdb;
+        border-width: 0px;
 
-        transition: opacity .5s ease-in-out;
-        -moz-transition: opacity .5s ease-in-out;
-        -webkit-transition: opacity .5s ease-in-out;
+        transition: border-width .25s ease-in-out;
+        -moz-transition: border-width .25s ease-in-out;
+        -webkit-transition: border-width .25s ease-in-out;
+
+        h2{
+          color: #FFFFFF;
+          padding: 0px 10px 0px 10px;
+          text-shadow: 0px 0px 10px rgba(0,0,0,1);
+          text-transform: uppercase;
+          margin-top: 0px;
+          font-size: 40px;
+        }
+        hr{
+          width: 25%;
+        }
+
+        .date{
+          font-family: "Open Sans Condensed";
+          font-size: 20px;
+        }
+
+        @include breakpoint(sm){
+          h2{
+            font-size: 24px;
+          }
+        }
       }
       &:hover{
         .border{
-          opacity: 1;
+          border-width: 4px;
         }
       }
     }
