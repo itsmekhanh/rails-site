@@ -1,5 +1,5 @@
 class TumblrManager
-  BLOG="khanhtesting.tumblr.com"
+  BLOG="khanhluc2.tumblr.com"
 
   def initialize()
     Tumblr.configure do |config|
@@ -20,12 +20,12 @@ class TumblrManager
     end
   end
 
-  def getPosts()
-    blog = @client.posts(BLOG)
-    return self.filterPosts(blog['posts'])
+  def getPosts(tag=nil, include_images=true)
+    blog = @client.posts(BLOG, :tag=>tag)
+    return self.filterPosts(blog['posts'], include_images)
   end
 
-  def filterPost(post)
+  def filterPost(post, include_images=true)
     require 'rails/html/sanitizer'
     require 'nokogiri'
 
@@ -51,6 +51,11 @@ class TumblrManager
         img = html.css("img").first
         data[:main_image] = img['src']
 
+        if !include_images
+          html.search(".//img").remove
+          data[:body] = html.to_html
+        end
+
       when "video"
         data[:body] = post['player'][2]['embed_code']
         data[:title] = sanitizer.sanitize(post['caption'])
@@ -61,10 +66,10 @@ class TumblrManager
     return data
   end
 
-  def filterPosts(posts)
+  def filterPosts(posts, include_images = true)
     data = []
     posts.each do |post|
-      data << self.filterPost(post)
+      data << self.filterPost(post, include_images)
     end
     return data
   end

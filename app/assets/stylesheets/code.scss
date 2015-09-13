@@ -5,9 +5,40 @@
   background-size: cover;
 
   filter: blur(2px);
-  height: 100vh;
+  height: auto;
+  padding-top: 52px;
 
   .project{
-    height: 500px;
+    height: auto;
+    background-color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    .content{
+      -webkit-box-shadow: -6px 0px 19px -4px rgba(0,0,0,0.75);
+      -moz-box-shadow: -6px 0px 19px -4px rgba(0,0,0,0.75);
+      box-shadow: -6px 0px 19px -4px rgba(0,0,0,0.75);
+      height: auto;
+      min-height: 300px;
+      padding: 20px;
+
+      h3{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+      }
+      p{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+      }
+    }
+
+    .image{
+      min-height: 300px;
+      height: 100%;
+      background-size: cover;
+      background-position: top left;
+    }
   }
 }
