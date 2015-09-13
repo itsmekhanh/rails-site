@@ -20,8 +20,8 @@ class TumblrManager
     end
   end
 
-  def getPosts(tag=nil, include_images=true)
-    blog = @client.posts(BLOG, :tag=>tag)
+  def getPosts(tag=nil, include_images=true, limit=nil)
+    blog = @client.posts(BLOG, :tag=>tag, :limit=>limit)
     return self.filterPosts(blog['posts'], include_images)
   end
 

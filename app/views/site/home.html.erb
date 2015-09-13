@@ -135,39 +135,20 @@
         <h2>Featured <span class="emphasize">Projects</span></h2>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <div class="featured">
-            <div class="featured-overlay text-center">
-              <div class="vcenter">
-                <h2>Statistics Panel</h2>
-                <h3>Classroom.tv</h3>
-              </div>
+        <% @projects.each do |project| %>
+            <div class="col-md-4">
+              <a href="<%= project_path(project[:id], project[:title].downcase.tr(" ","-"))%>">
+                  <div class="featured">
+                    <div class="featured-overlay text-center">
+                      <div class="vcenter">
+                        <h2><%= project[:title]%></h2>
+                      </div>
+                    </div>
+                    <img src="<%=  project[:main_image]%>"/>
+                  </div>
+              </a>
             </div>
-            <%= image_tag "stats-thumbnail.jpg" %>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="featured">
-            <div class="featured-overlay text-center">
-              <div class="vcenter">
-                <h2>Payment System</h2>
-                <h3>Classroom.tv</h3>
-              </div>
-            </div>
-            <%= image_tag "payment-thumbnail.jpg" %>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="featured">
-            <div class="featured-overlay text-center">
-              <div class="vcenter">
-                <h2>Social Interests</h2>
-                <h3>Classroom.tv</h3>
-              </div>
-            </div>
-            <%= image_tag "social-thumbnail.jpg" %>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
