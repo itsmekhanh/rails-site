@@ -7,19 +7,7 @@ var Post = React.createClass({
        var url = "/blog/post/"+post.id+"/"+post.slug;
        var img = "";
 
-       switch(post.type){
-           case "text":
-               imgTag = $(post.body).filter('img').first();
-               img = imgTag[0].src;
-               break;
-           case "video":
-               img = post.thumbnail_url;
-               break;
-           case "photo":
-               break;
-       }
-
-       divStyle["backgroundImage"] = 'url('+img+')';
+       divStyle["backgroundImage"] = 'url('+post.main_image+')';
 
        return (
            <a href={url} className={className} style={divStyle}>

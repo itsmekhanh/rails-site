@@ -2,7 +2,7 @@ class BlogController < ApplicationController
 
   def index
     manager = TumblrManager.new
-    @posts = manager.getPosts
+    @posts = manager.getPosts "blog"
   end
 
   def post

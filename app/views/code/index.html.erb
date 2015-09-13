@@ -7,11 +7,13 @@
               <div class="col-md-4 image" style="background-image: url('<%= project[:main_image]%>');">
               </div>
               <div class="col-md-8 content">
+                <a href="<%= project_path(project[:id], project[:title].downcase.tr(" ","-"))%>" class="view-project">View Project</a>
                 <h3>
                   <%= project[:title] %>
                 </h3>
                 <hr>
                 <%= (project[:body].html_safe) %>
+                <a href="<%= project_path(project[:id], project[:title].downcase.tr(" ","-"))%>" class="view-project-small">View Project</a>
               </div>
             </div>
         <% end %>
