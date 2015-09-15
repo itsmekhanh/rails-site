@@ -12,4 +12,14 @@ class CodeController < ApplicationController
     end
   end
 
+  def view
+    require 'nokogiri'
+    manager = TumblrManager.new
+    if(params[:id])
+      @project = manager.getPost(params[:id])
+    else
+      redirect_to(index)
+    end
+  end
+
 end

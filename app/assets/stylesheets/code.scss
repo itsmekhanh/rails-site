@@ -89,3 +89,19 @@
     }
   }
 }
+
+#project{
+  padding-top: 52px;
+  background-color: black;
+  .project-images{
+    img{
+      width: 100%;
+    }
+  }
+
+  #banner{
+    background-size: cover;
+    background-position: center center;
+    height: 75vh;
+  }
+}
