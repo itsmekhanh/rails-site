@@ -159,9 +159,9 @@
   }
 
   p{
-
+    text-indent: 50px;
     &:first-child{
-      margin-top: 80px;
+      margin-top: 40px;
       @include breakpoint(sm){
         margin-top: 40px;
       }

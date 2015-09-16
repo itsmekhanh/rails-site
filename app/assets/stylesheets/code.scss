@@ -91,17 +91,61 @@
 }
 
 #project{
+  background-image: url("https://farm8.staticflickr.com/7492/15885787955_83fce72b16_h.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   padding-top: 52px;
-  background-color: black;
+  padding-bottom: 52px;
+  .container{
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow:  0px 0px 18px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+    padding-left: 0px;
+    padding-right: 0px;
+
+    @include breakpoint(sm){
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
   .project-images{
     img{
       width: 100%;
+      max-height: 50vh;
     }
   }
 
   #banner{
-    background-size: cover;
-    background-position: center center;
-    height: 75vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #BBBBBB;
+    background-color: #000000;
+
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+
+  }
+
+  #content{
+    color: rgb(44, 61, 79);
+    background-color: #F3F3F3;
+    padding: 20px;
+
+    h1{
+      font-family: 'Open Sans Condensed', sans-serif;
+      @include breakpoint(sm){
+        font-size: 20px;
+      }
+    }
+
+    p.text{
+      font-family: "Open Sans";
+      font-size: 20px;
+      @include breakpoint(sm){
+        font-size: 16px;
+      }
+    }
   }
 }

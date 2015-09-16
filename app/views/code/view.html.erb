@@ -1,5 +1,12 @@
 <% provide(:title, @project[:title]) %>
 <div id="project">
-  <div id="banner"></div>
-  <%= @project[:body].html_safe %>
+  <div class="container">
+    <div id="banner"></div>
+    <div id="content">
+      <h1 class="text-center text-capitalize"><%= @project[:title] %></h1>
+      <%= @project[:body].html_safe %>
+
+    </div>
+  </div>
 </div>
+
