@@ -12,3 +12,8 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "shared/fonts";
+@import "animate.css";

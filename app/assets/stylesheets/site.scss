@@ -1,9 +1,6 @@
 // Place all the styles related to the Site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "shared/fonts";
 @import "shared/mixins/responsive";
 @import "animate.css";
@@ -62,16 +59,18 @@
   }
 
   #view-profile{
-    color: white;
-    width: 10%;
-    font-size: 60px;
-    position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 92%;
+    color: white;
+    font-size: 60px;
+    position: absolute;
     z-index: 1004;
+    bottom: 0px;
     text-align: center;
+  }
+  .glyphicon{
+    top: auto;
   }
 }
 
