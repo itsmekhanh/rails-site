@@ -24,6 +24,11 @@ class FlickrManager
     return sets
   end
 
+  def get_set_info(photoset_id)
+    set_data = flickr.photosets.getInfo :photoset_id => photoset_id
+    return set_data
+  end
+
   def get_photos(photoset_id, page=1, per_set=500, size="b")
     data = flickr.photosets.getPhotos :photoset_id => photoset_id, :page => page, :per_page => per_set
     photos = []
