@@ -46,7 +46,7 @@ var Photos = React.createClass({
             overlay = i == this.props.currentImage ? "" : "active";
             overlay = ("overlay "+overlay).trim();
             photos[i] = (
-                <div className="photo" key={i} onClick={this.handlingClick} data-index={i} data-active={overlay}>
+                <div className="photo" key={i} onTouchStart={this.handlingClick} onClick={this.handlingClick} data-index={i} data-active={overlay}>
                     <div className={overlay}></div>
                     <img src={this.props.photos[i]["image_url"]}/>
                 </div>
