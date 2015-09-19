@@ -20,6 +20,7 @@ var Posts = React.createClass({
         return (
             <div>
                 {posts}
+                <div className="clearfix"></div>
             </div>
         );
     }
