@@ -42,7 +42,7 @@ var Gallery = React.createClass({
        });
    },
    getPhotos: function(){
-       var page = Math.floor(this.state.photos.length/this.props.pageSize)+1;
+       var page = Math.ceil(this.state.photos.length/this.props.pageSize)+1;
        var photos = this.state.photos;
 
        if(this.isMounted()){
